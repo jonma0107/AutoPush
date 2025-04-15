@@ -4,3 +4,5 @@ Dailys:
 - De la reunión con Nicolás se ajustó en el back la respuesta para el metodo GET, para que el front pueda obtener la url prefirmada y al momento de listar que el usuario también pueda descaragr el archivo desde la plataforma.
 
 
+
+
