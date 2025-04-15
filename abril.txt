@@ -4,6 +4,6 @@ Dailys:
 - De la reunión con Nicolás se ajustó en el back la respuesta para el metodo GET, para que el front pueda obtener la url prefirmada y al momento de listar que el usuario también pueda descaragr el archivo desde la plataforma.
 
 PROPUESTA TÉCNICA:
-- En lugar de eliminar la expiración de una url pre-firmada, considerar implementar un sistema que genere nuevas URLs prefirmadas bajo demanda. Esto permite que los usuarios accedan a los archivos cuando lo necesiten, pero con un control de acceso más seguro 
+- En lugar de eliminar la expiración de una url prefirmada, considerar implementar un sistema que genere nuevas URLs prefirmadas bajo demanda. Esto permite que los usuarios accedan a los archivos cuando lo necesiten, pero con un control de acceso más seguro 
 
 
