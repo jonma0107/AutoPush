@@ -16,4 +16,19 @@ La funcionalidad de commit y push automático se logra mediante el uso de un scr
 
 Para que este proceso funcione de forma automática, el script `watch_and_commit.sh` se ejecuta en segundo plano. De esta manera, sigue monitoreando el archivo incluso después de cerrar la terminal donde se inició.
 
+## Ejecución
+
+Para que la aplicación funcione correctamente, es necesario ejecutar el siguiente comando en la terminal:
+
+```bash
+nohup ./watch_and_commit.sh &
+```
+
+Este comando inicia el script `watch_and_commit.sh` en segundo plano. 
+
+*   `nohup` asegura que el script continúe ejecutándose incluso si cierras la terminal. La salida del script se redirige al archivo `nohup.out`.
+*   `./watch_and_commit.sh` es la ruta al script que se ejecutará.
+*   `&` indica al sistema que ejecute el comando en segundo plano, permitiéndote seguir usando la terminal.
+
 **Nota:** Para que el script funcione correctamente, es necesario que el repositorio de Git ya esté inicializado y que la rama remota (generalmente `origin`) esté configurada.
+
