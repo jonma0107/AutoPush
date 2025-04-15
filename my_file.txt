@@ -9,3 +9,5 @@ touch my_empty_file.txt
 If you're on a different operating system, the command might be slightly different, but the core concept remains the same. You would use a command-line instruction to create an empty file.
 
 Esto es una prueba
+
+genial
