@@ -1,6 +1,6 @@
 Dailys:
 16/abril/2025:
-Pa 
+Para Karya 
 - Asegurando la integración del back con el front, para el requerimiento 423 del gestor de archivos, se logró que el front pueda tomar la url prefirmada y que pueda cargar el archivo al S3.
 - De la reunión con Nicolás se ajustó en el back la respuesta para el metodo GET, para que el front pueda obtener la url prefirmada y al momento de listar que el usuario también pueda descaragr el archivo desde la plataforma.
 
