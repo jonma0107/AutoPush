@@ -7,5 +7,5 @@ Para KARYA:
 PROPUESTA TÉCNICA:
 - En lugar de eliminar la expiración de una url prefirmada, considerar implementar un sistema que genere nuevas URLs prefirmadas bajo demanda. Esto permite que los usuarios accedan a los archivos cuando lo necesiten, pero con un control de acceso más seguro. 
 
-
+Para TRACKEUM
 
