@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Define the file to watch
-file_to_watch="your_file.txt"
-file_to_watch="my_file.txt"
+file_to_watch="abril.txt"
 # Function to handle changes
 handle_change() {
   echo "Changes detected in $file_to_watch"
