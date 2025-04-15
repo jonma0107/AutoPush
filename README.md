@@ -32,3 +32,11 @@ Este comando inicia el script `watch_and_commit.sh` en segundo plano.
 
 **Nota:** Para que el script funcione correctamente, es necesario que el repositorio de Git ya esté inicializado y que la rama remota (generalmente `origin`) esté configurada.
 
+
+## Archivo nohup.out
+
+El archivo `nohup.out` se crea cuando se ejecuta un comando con `nohup` y este archivo almacena la salida de ese comando. En el caso de esta aplicación, `nohup.out` contendrá cualquier mensaje que el script `watch_and_commit.sh` imprima mientras se ejecuta en segundo plano.
+
+Generalmente, no es necesario subir el archivo `nohup.out` al repositorio. Este archivo suele contener información específica de la ejecución del script en un entorno particular (como mensajes de depuración o registros de actividad) que no es relevante para el funcionamiento general de la aplicación en otros entornos o para otros usuarios. Incluirlo en el repositorio podría causar que el historial crezca innecesariamente y podría exponer información sensible del entorno de ejecución.
+
+Es una buena práctica agregar `nohup.out` al archivo `.gitignore` para que Git ignore los cambios en ese archivo y no lo incluya en el repositorio.
