@@ -10,7 +10,7 @@
 >
 >Categorias
 
-<!-- ✅ ⚠️ 🔥 Este emoji está comentado y no se mostrará --> 
+<!-- ✅ ⚠️ 🔥 📌 Este emoji está comentado y no se mostrará --> 
 
 <!-- ✅ Este emoji está comentado y no se mostrará --> 
 
