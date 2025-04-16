@@ -3,5 +3,4 @@
 >
 >Categorias
 
-
-✅ 
+<!-- ✅ Este emoji está comentado y no se mostrará --> 
