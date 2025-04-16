@@ -11,6 +11,7 @@
 > Se debe tener filtro por usuario.⚠️
 >
 > Categoría tipo de carga.⚠️
-Al momento de subir el archivo 
+Al momento de subir el archivo tambien seleccionar una categoria
+
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
