@@ -8,7 +8,7 @@
 >[!warning]
 >Req. 423 - Gestor de archivos
 >
->Se debe tener filtro por usuario.⚠️
+> Se debe tener filtro por usuario.⚠️
 >Categoría tipo de carga.⚠️
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
