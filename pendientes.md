@@ -8,7 +8,7 @@
 >[!warning]
 >Req. 423 - Gestor de archivos
 >
->Se de
+>Se debe tener filtro 
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
 
