@@ -1,5 +1,5 @@
 >[!important]
->Req. 423 - Gestor de archivos
+>Req. 423 - Gestor de archivos ✅
 >
 >Categorias
 
