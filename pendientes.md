@@ -1,4 +1,4 @@
->[!question]
+>[!info]
 >Req. 423 - Gestor de archivos
 >
 >Categorias
