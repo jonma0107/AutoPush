@@ -1,22 +1,23 @@
 #!/bin/bash
 
 # Define the file to watch
-file_to_watch="abril.txt"
+file_to_watch_1="abril.txt"
+file_to_watch_2="pendientes.txt"
 # Function to handle changes
 handle_change() {
-  echo "Changes detected in $file_to_watch"
-  git add "$file_to_watch"
-  git commit -m "actualizacion de archivo"
+  echo "Changes detected in $file_to_watch_1 and $file_to_watch_2. Committing and pushing changes..."
+  git add "$file_to_watch_1" "$file_to_watch_2"
+  git commit -m "actualización de archivos"
   git push origin HEAD
   echo "Changes committed and pushed."
 }
 
 # Get initial state
-initial_state=$(stat "$file_to_watch")
+initial_state=$(stat "$file_to_watch_1" "$file_to_watch_2")
 
 # Loop indefinitely
 while true; do
-  current_state=$(stat "$file_to_watch")
+  current_state=$(stat "$file_to_watch_1" "$file_to_watch_2")
 
   # Compare current state with initial state
   if [ "$current_state" != "$initial_state" ]; then
