@@ -12,6 +12,6 @@
 >
 > Categoría tipo de carga.⚠️
 Al momento de subir el archivo tambien seleccionar una categoria
-y quede 
+y quede como la etiqueta 
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
