@@ -5,7 +5,7 @@
 
 <!-- ✅ Este emoji está comentado y no se mostrará -->
 
-<[]>
+<[!warning]>
 
 <!-- ✅ Este emoji está comentado y no se mostrará --> 
 
