@@ -2,7 +2,7 @@
 
 # Define the file to watch
 file_to_watch_1="abril.txt"
-file_to_watch_2="pendientes.txt"
+file_to_watch_2="pendientes.md"
 # Function to handle changes
 handle_change() {
   echo "Changes detected in $file_to_watch_1 and $file_to_watch_2. Committing and pushing changes..."
