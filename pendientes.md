@@ -9,7 +9,7 @@
 >Req. 423 - Gestor de archivos
 >
 >Se debe tener filtro por usuario.
->
+>Categoria 
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
 
