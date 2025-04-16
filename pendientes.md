@@ -6,7 +6,9 @@
 <!-- ✅ Este emoji está comentado y no se mostrará -->
 
 >[!warning]
->Req. 423 - Gestor de archivos 
+>Req. 423 - Gestor de archivos
+>
+
 
 <!-- ✅ Este emoji está comentado y no se mostrará --> 
 
