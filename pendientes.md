@@ -1,6 +1,6 @@
 >[!note]
 >Req. 423 - Gestor de archivos ✅
 >
->Hacer un submo
+>Crear un submódulo
 
 <!-- ✅ Este emoji está comentado y no se mostrará --> 
