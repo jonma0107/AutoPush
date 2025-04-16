@@ -11,6 +11,6 @@
 > Se debe tener filtro por usuario.⚠️
 >
 > Categoría tipo de carga.⚠️
-
+A
 
 <!-- ✅ ⚠️ 🔥 📌 ❌ 💡--> 
