@@ -17,3 +17,5 @@ Dailys:
 21/abril/2025:
 
 Ya está integrado lo de soporte de archivos. Para desplegarlo en un ambiente de test
+
+*******************************************************************************
