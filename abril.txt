@@ -12,3 +12,5 @@ Para TRACKEUM:
 - Ayer integré el modelo SupportFiles para manejar archivos de soporte con campos como nombre, tamaño, y usuario. También agregué dos endpoints: uno para listar y generar URLs prefirmadas de subida a S3, y otro para consultar, actualizar o eliminar un archivo, incluyendo la generación de la URL de acceso. Ya está listo para pruebas en el frontend.
 
 *******************************************************************************
+
+HOLA DARWIN 
