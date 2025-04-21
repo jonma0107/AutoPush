@@ -16,4 +16,4 @@ Para TRACKEUM:
 Dailys:
 21/abril/2025:
 
-Ya está integrado lo de soporte de archivos en 
+Ya está integrado lo de soporte de archivos. 
