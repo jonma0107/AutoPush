@@ -19,3 +19,13 @@ Dailys:
 Ya está integrado lo de soporte de archivos. Para desplegarlo en un ambiente de test
 
 *******************************************************************************
+
+Dailys:
+22/abril/2025:
+
+Desplegué lo de la rama del submodulo de archivos de soporte en ambiente de test de RIMAC, para lo de front le pedi a Johan desplegar también. Luego configuré en la base de datos en la tabla de navigationbar la visualización del modulo
+probé con archivo pdf de más de 20 mb e hice una limpieza del código.
+
+*************************************************************************************************************
+
+
