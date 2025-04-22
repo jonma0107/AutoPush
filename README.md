@@ -1,42 +1,108 @@
-# Aplicación de Commit y Push Automático
+# 🛠️ watch_and_commit.sh - Servicio automático con systemd
 
-Esta aplicación realiza un commit genérico y un push automático a un repositorio de Git tan pronto como se detecta un cambio y se guarda en el archivo `my_file.txt`.
+Este proyecto contiene un script llamado `watch_and_commit.sh` que se ejecuta automáticamente al iniciar el sistema utilizando `systemd`.
 
-## Propósito
+## 📄 Descripción
 
-El propósito principal de esta aplicación es automatizar el proceso de seguimiento de cambios en el archivo `my_file.txt`. Cada vez que se modifica y se guarda el archivo, se genera un commit con el mensaje "actualizacion de archivo" y se envía automáticamente al repositorio remoto. Esto elimina la necesidad de realizar manualmente los pasos de commit y push, simplificando el flujo de trabajo y asegurando que los cambios se registren de forma consistente.
+- El script se encarga de realizar tareas automatizadas (como monitoreo de archivos y commits automáticos) y debe ejecutarse en segundo plano cada vez que arranca el sistema operativo. 
 
-## Configuración
+- El script automatiza el proceso de seguimiento de cambios en el archivo `my_file.txt`. Cada vez que se modifica y se guarda el archivo, se genera un commit con el mensaje "actualización de archivo" y se envía automáticamente al repositorio remoto.
 
-La funcionalidad de commit y push automático se logra mediante el uso de un script en Bash llamado `watch_and_commit.sh`. Este script se encarga de:
+**Nota:** Para que el script funcione correctamente, es necesario que el repositorio de Git ya esté inicializado y que la rama remota esté configurada. 
 
-1. **Monitorear cambios:** El script vigila continuamente el archivo `my_file.txt` para detectar cualquier modificación.
-2. **Realizar commit:** Cuando se detecta un cambio, el script ejecuta los comandos de Git necesarios para añadir el archivo modificado (`git add my_file.txt`) y crear un nuevo commit con el mensaje predefinido (`git commit -m "actualizacion de archivo"`).
-3. **Enviar cambios:** Finalmente, el script ejecuta el comando `git push origin HEAD` para enviar el commit al repositorio remoto.
+- El Script realiza un commit genérico y un push automático a un repositorio de Git tan pronto como se detecta un cambio y se guarda en el archivo `my_file.txt`.
 
-Para que este proceso funcione de forma automática, el script `watch_and_commit.sh` se ejecuta en segundo plano. De esta manera, sigue monitoreando el archivo incluso después de cerrar la terminal donde se inició.
 
-## Ejecución
-
-Para que la aplicación funcione correctamente, es necesario ejecutar el siguiente comando en la terminal:
+## 📁 Ruta del script
 
 ```bash
-nohup ./watch_and_commit.sh &
+/home/<user>/Desktop/<directory>/watch_and_commit.sh
 ```
 
-Este comando inicia el script `watch_and_commit.sh` en segundo plano. 
+## ⚙️ Instalación como servicio systemd
 
-*   `nohup` asegura que el script continúe ejecutándose incluso si cierras la terminal. La salida del script se redirige al archivo `nohup.out`.
-*   `./watch_and_commit.sh` es la ruta al script que se ejecutará.
-*   `&` indica al sistema que ejecute el comando en segundo plano, permitiéndote seguir usando la terminal.
+1. Abre el archivo de configuración del servicio:
 
-**Nota:** Para que el script funcione correctamente, es necesario que el repositorio de Git ya esté inicializado y que la rama remota (generalmente `origin`) esté configurada.
+```bash
+sudo nano /etc/systemd/system/watch_and_commit.service
+```
+
+2. Copia y pega la siguiente configuración:
+
+```ini
+[Unit]
+Description=Watch and Commit Script
+After=network.target
+
+[Service]
+ExecStart=/home/<user>/Desktop/<directory>/watch_and_commit.sh
+WorkingDirectory=/home/<user>/Desktop/<directory>
+Restart=always
+User=<user>
+Environment=PATH=/usr/bin:/usr/local/bin
+StandardOutput=append:/var/log/watch_and_commit.log
+StandardError=append:/var/log/watch_and_commit.err
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Nota:** reemplaza <user> y <directory> con la infromación respectiva de tu sistema,
+
+3. Recarga los servicios de `systemd` y habilita el servicio ejecutando estos comandos en orden:
+
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable watch_and_commit.service
+sudo systemctl start watch_and_commit.service
+```
+
+## 🔍 Verificación
+
+- Ver el estado del servicio:
+
+```bash
+systemctl status watch_and_commit.service
+```
+
+- Ver los logs generados:
+
+```bash
+cat /var/log/watch_and_commit.log
+cat /var/log/watch_and_commit.err
+```
+
+## 🚫 Detener o deshabilitar el servicio
+
+- Detener el servicio manualmente:
+
+```bash
+sudo systemctl stop watch_and_commit.service
+```
+
+- Evitar que se inicie automáticamente:
+
+```bash
+sudo systemctl disable watch_and_commit.service
+```
+
+## 🧼 Notas adicionales
+
+- Asegúrate de que el script `watch_and_commit.sh` tenga permisos de ejecución:
+
+```bash
+chmod +x /home/<user>/Desktop/<directory>/watch_and_commit.sh
+```
+
+- Puedes editar el script en cualquier momento, y luego reiniciar el servicio con:
+
+```bash
+sudo systemctl restart watch_and_commit.service
+```
+
+---
 
 
-## Archivo nohup.out
-
-El archivo `nohup.out` se crea cuando se ejecuta un comando con `nohup` y este archivo almacena la salida de ese comando. En el caso de esta aplicación, `nohup.out` contendrá cualquier mensaje que el script `watch_and_commit.sh` imprima mientras se ejecuta en segundo plano.
-
-Generalmente, no es necesario subir el archivo `nohup.out` al repositorio. Este archivo suele contener información específica de la ejecución del script en un entorno particular (como mensajes de depuración o registros de actividad) que no es relevante para el funcionamiento general de la aplicación en otros entornos o para otros usuarios. Incluirlo en el repositorio podría causar que el historial crezca innecesariamente y podría exponer información sensible del entorno de ejecución.
-
-Es una buena práctica agregar `nohup.out` al archivo `.gitignore` para que Git ignore los cambios en ese archivo y no lo incluya en el repositorio.
+**Autor:** Jonathan Meza  
+**Licencia:** MIT
