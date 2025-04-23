@@ -44,3 +44,17 @@ está pendiente por confirmar si se guarda en zip
 
 
 prueba despues de apagado
+
+*****************************************************************************************************************
+
+Dailys:
+23/abril/2025:
+
+trabajando en guardar en paquetes distintos en el S3 de acuerdo a la categoría, osea cargar en el bucket pero que se guarde en diferente carpeta según la categoría
+
+********************************************************************************************************************************************************************
+
+Dailys:
+24/abril/2025:
+
+-
