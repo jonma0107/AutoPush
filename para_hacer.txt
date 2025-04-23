@@ -8,3 +8,5 @@ necesitamos desplegar la funcionalidad de xxxx en tal test, algo que no está en
 guardar en paquetes distintos en el S3 de acuerdo a la categoría, osea cargar en el bucket pero que se guarde en diferente carpeta según la categoría
 
 Nota: está pendiente por confirmar si se guarda en zip
+
+****************************************************************************************************************************************************
