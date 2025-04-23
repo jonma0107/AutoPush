@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the file to watch
-file_to_watch_1="abril.txt"
-file_to_watch_2="pendientes.md"
+file_to_watch_1="daily.txt"
+file_to_watch_2="para_hacer.txt"
 # Function to handle changes
 handle_change() {
   echo "Changes detected in $file_to_watch_1 and $file_to_watch_2. Committing and pushing changes..."
