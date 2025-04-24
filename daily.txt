@@ -54,4 +54,8 @@ trabajando en guardar en paquetes distintos en el S3 de acuerdo a la categoría,
 Dailys:
 24/abril/2025:
 
-- 
+- cree unmodelo propio define las categorías disponibles
+
+- ForeignKey en SupportFiles que relaciona un archivo con una categoría
+
+- modificar la forma en que se construye la key del objeto en S3
