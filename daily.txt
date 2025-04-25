@@ -49,13 +49,22 @@ Dailys:
 
 trabajando en guardar en paquetes distintos en el S3 de acuerdo a la categoría, osea cargar en el bucket pero que se guarde en diferente carpeta según la categoría
 
-********************************************************************************************************************************************************************
+*************************************************************************************************************************************************************
 
 Dailys:
 24/abril/2025:
 
-- cree unmodelo propio define las categorías disponibles
+- cree un modelo propio que define las categorías disponibles
 
 - ForeignKey en SupportFiles que relaciona un archivo con una categoría
 
 - modificar la forma en que se construye la key del objeto en S3
+
+*************************************************************************************************************************************************************
+
+Dailys:
+25/abril/2025:
+
+- mientras estaba haciendo pruebas de la fase 2, me dispuse a identificar el error que compartí en el grupo
+
+- seguiré haciendo pruebas para comprobar que efectivamente se crean las carpetas según la categoría
