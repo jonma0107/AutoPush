@@ -78,7 +78,16 @@ Dailys:
 
 Realicé un HALLAZGO en la función sendRequest (utils/sendRequest.js) para solucionar un problema con la subida de archivos a S3 usando URLs prefirmadas.
 El Problema:
-La función sendRequest siempre incluía una cabecera Authorization en todas las peticiones. Esto es correcto para nuestros endpoints privados, pero Amazon S3 rechaza explícitamente la cabecera Authorization en las peticiones POST a URLs prefirmadas (devuelve un error 400 Unsupported Authorization Type).   
+La función sendRequest siempre incluía una cabecera Authorization en todas las peticiones. Esto es correcto para nuestros endpoints privados, pero Amazon S3 rechaza explícitamente la cabecera Authorization en las peticiones POST a URLs prefirmadas (devuelve un error 400 Unsupported Authorization Type).  
+
+******************************************************************************************************************************************************************************************
+
+Dailys:
+29/abril/2025:
+
+- mientras mezclaban la fase uno del módulo de archivo de soporte, ajustaba en otra rama la fase dos para que al cargarse un archivo al s3 permita al usuario elegir la categoria y en el bucket ese archivo se subiera a una carpeta con el nombre de dicha categoria
+
+- ayude a A. Orjuela a solucionar unos errores que el pipeline le presentaba al momento de ejecutar PR de una app que está desarrollando para Karya.
 
 
 
