@@ -14,3 +14,5 @@ Nota: está pendiente por confirmar si se guarda en zip
 - Predicción de reingresos hospitalarios
 
 -Monitoreo remoto de pacientes., o RPM, es una herramienta común de atención médica que ayuda a los médicos a supervisar a pacientes con enfermedades crónicas o de corta duración que viven en áreas remotas. 
+
+***************************************************************************************************************************************************
