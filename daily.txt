@@ -76,7 +76,7 @@ Dailys:
 
 - Al integrar con FRontEnd en Trackeum, lo del módulo de archivos de soporte:
 
-Realicé un HALLAZGO en nuestra función sendRequest (utils/sendRequest.js) para solucionar un problema con la subida de archivos a S3 usando URLs prefirmadas.
+Realicé un HALLAZGO en la función sendRequest (utils/sendRequest.js) para solucionar un problema con la subida de archivos a S3 usando URLs prefirmadas.
 El Problema:
 La función sendRequest siempre incluía una cabecera Authorization en todas las peticiones. Esto es correcto para nuestros endpoints privados, pero Amazon S3 rechaza explícitamente la cabecera Authorization en las peticiones POST a URLs prefirmadas (devuelve un error 400 Unsupported Authorization Type).   
 
