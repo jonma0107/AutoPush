@@ -90,7 +90,12 @@ Dailys:
 - ayude a A. Orjuela a solucionar unos errores que el pipeline le presentaba al momento de ejecutar PR de una app que está desarrollando para Karya.
 
 
-- desplegué en test
+- desplegué en test 
+
+*******************************************************************************************************************
+
+Daily:
+05/ May / 2025
 
 
 
