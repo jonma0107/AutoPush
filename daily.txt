@@ -98,6 +98,8 @@ Daily:
 05/ May / 2025
 
 1. preparar pull request:
+2. Revisar y tener propuesta de como podríamos trabajar: Enmascaramiento de datos de un proyecto o un test (Permiso de encriptación / anonimización de datos). Lo que quieren es una opción que devuelva enmascarada o encriptada la información en los test, y no datos reales.
+3. apoyo a Wilmar Sacristan para sincronizacion
 
 ****************************************************************
 
