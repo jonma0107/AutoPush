@@ -103,6 +103,85 @@ sudo systemctl restart watch_and_commit.service
 
 ---
 
+# ✅ Pasos Para Crear y Asociar Una Llave SSH A GITHUB
+
+1. Crear una llave SSH
+Ejecuta en tu terminal:
+
+```bash
+ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
+```
+
+Cuando te pregunte por el nombre del archivo, ponle algo como:
+
+```bash
+Enter file in which to save the key (/home/<user>/.ssh/id_ed25519): /home/<user>/.ssh/github_meza
+```
+
+Esto generará dos archivos:
+
+```bash
+/home/<user>/.ssh/github_meza (llave privada)
+
+/home/<user>/.ssh/github_meza.pub (llave pública)
+```
+
+Puedes dejar el passphrase en blanco o usar uno para mayor seguridad.
+
+2. Agregar la nueva llave al agente SSH
+Ejecuta:
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github_meza
+```
+
+3. Agregarla al archivo de configuración SSH
+Edita `~/.ssh/config` y agrega al final:
+
+```bash
+# GitHub Jonathan Meza
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_meza
+```
+
+Así forzamos que se use esta nueva llave al conectarte a GitHub.
+
+4. Copiar la llave pública
+Ejecuta:
+
+```bash
+cat ~/.ssh/github_meza.pub
+```
+
+Esto te mostrará la clave pública. Copia todo ese contenido.
+
+5. Agregarla a tu cuenta de GitHub
+Ve a `https://github.com/settings/keys`:
+
+- Clic en "New SSH key"
+
+- Title: github_meza o el nombre que prefieras
+
+- Key: pega lo que copiaste del paso anterior
+
+- Clic en "Add SSH key"
+
+6. Probar la conexión
+Ejecuta:
+
+```bash
+ssh -T git@github.com
+```
+
+Deberías ver un mensaje como:
+
+```bash
+Hi jonma0107! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
 
 **Autor:** Jonathan Meza  
 **Licencia:** MIT
