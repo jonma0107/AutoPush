@@ -104,5 +104,43 @@ Daily:
 ****************************************************************
 
 
+¿Por qué existía el método get_error?
+El método get_error en el serializador de FileRequest era una lógica de negocio personalizada que:
+Calculaba un "estado virtual" del archivo, basado en condiciones adicionales (por ejemplo, si el padre estaba en error, o si había errores en el archivo).
+Permitía mostrar "ERROR" en la respuesta de la API aunque el valor real en la base de datos fuera otro (como "INITIATED" o "FINALIZED").
+
+Esto podía ser útil para alertar visualmente al usuario de situaciones problemáticas, aunque el estado real no fuera "ERROR".
+
+¿Por qué lo eliminé?
+No se usa en ninguna otra parte del código (confirmado por búsqueda global).
+
+Causaba confusión: El filtro en la API podía traer registros con status_request_file="FINALIZED", pero el serializador los mostraba como "ERROR" si se cumplían ciertas condiciones, lo que rompía la correspondencia entre lo que se filtraba y lo que se veía.
+
+El requerimiento actual es que el filtro y la visualización sean estrictos:
+Solo deben mostrarse los registros cuyo valor real en base de datos para status_request_file coincida exactamente con el filtro aplicado.
+
+La lógica de negocio debe estar separada:
+Si en el futuro se necesita mostrar un "estado virtual" o calculado, es mejor implementarlo como un campo adicional (por ejemplo, virtual_status) y no sobrescribir el valor real del campo.
+
+¿Qué le puedes decir a tu equipo?
+> Eliminé el método get_error del serializador de FileRequest porque:
+> - No se utiliza en ninguna otra parte del proyecto.
+> - Su lógica sobrescribía el valor real de status_request_file en la respuesta de la API, lo que causaba inconsistencias entre el filtro aplicado y los datos mostrados al usuario.
+> - El requerimiento actual es que el filtro y la visualización sean estrictos y reflejen el valor real del campo en la base de datos.
+> - Si en el futuro se necesita mostrar un estado calculado o virtual, se recomienda implementarlo como un campo adicional y no sobrescribir el valor real del campo.
+
+Esto demuestra buenas prácticas de desarrollo y claridad en la lógica de negocio.
+
+*********************************************************************************************************
+*********************************************************************************************************
+
+Prueba de CONCEPTO PARA TÉCNICA DE ENMASCARAMIENTO
+
+
+
+
+
+
+
 
 
