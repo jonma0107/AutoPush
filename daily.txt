@@ -80,7 +80,7 @@ Realicé un HALLAZGO en la función sendRequest (utils/sendRequest.js) para solu
 El Problema:
 La función sendRequest siempre incluía una cabecera Authorization en todas las peticiones. Esto es correcto para nuestros endpoints privados, pero Amazon S3 rechaza explícitamente la cabecera Authorization en las peticiones POST a URLs prefirmadas (devuelve un error 400 Unsupported Authorization Type).  
 
-******************************************************************************************************************************************************************************************
+********************************************************************************************************************************************************
 
 Dailys:
 29/abril/2025:
@@ -103,6 +103,7 @@ Daily:
 
 ****************************************************************
 
+ARREGLO DE FILTRO EN MODULO DE CARGUE MASIVO:
 
 ¿Por qué existía el método get_error?
 El método get_error en el serializador de FileRequest era una lógica de negocio personalizada que:
@@ -113,28 +114,64 @@ Esto podía ser útil para alertar visualmente al usuario de situaciones problem
 
 ¿Por qué lo eliminé?
 No se usa en ninguna otra parte del código (confirmado por búsqueda global).
-
 Causaba confusión: El filtro en la API podía traer registros con status_request_file="FINALIZED", pero el serializador los mostraba como "ERROR" si se cumplían ciertas condiciones, lo que rompía la correspondencia entre lo que se filtraba y lo que se veía.
 
 El requerimiento actual es que el filtro y la visualización sean estrictos:
 Solo deben mostrarse los registros cuyo valor real en base de datos para status_request_file coincida exactamente con el filtro aplicado.
 
-La lógica de negocio debe estar separada:
-Si en el futuro se necesita mostrar un "estado virtual" o calculado, es mejor implementarlo como un campo adicional (por ejemplo, virtual_status) y no sobrescribir el valor real del campo.
+RESUMEN:
+Eliminé el método get_error del serializador de FileRequest porque:
+ - No se utiliza en ninguna otra parte del proyecto.
+ - Su lógica sobrescribía el valor real de status_request_file en la respuesta de la API, lo que causaba inconsistencias entre el filtro aplicado y los datos mostrados al usuario.
+ - El requerimiento actual es que el filtro y la visualización sean estrictos y reflejen el valor real del campo en la base de datos.
+ - Si en el futuro se necesita mostrar un estado calculado o virtual, se recomienda implementarlo como un campo adicional y no sobrescribir el valor real del campo.
 
-¿Qué le puedes decir a tu equipo?
-> Eliminé el método get_error del serializador de FileRequest porque:
-> - No se utiliza en ninguna otra parte del proyecto.
-> - Su lógica sobrescribía el valor real de status_request_file en la respuesta de la API, lo que causaba inconsistencias entre el filtro aplicado y los datos mostrados al usuario.
-> - El requerimiento actual es que el filtro y la visualización sean estrictos y reflejen el valor real del campo en la base de datos.
-> - Si en el futuro se necesita mostrar un estado calculado o virtual, se recomienda implementarlo como un campo adicional y no sobrescribir el valor real del campo.
+*******************************************************************************************************************************************
 
-Esto demuestra buenas prácticas de desarrollo y claridad en la lógica de negocio.
-
-*********************************************************************************************************
-*********************************************************************************************************
 
 Prueba de CONCEPTO PARA TÉCNICA DE ENMASCARAMIENTO
+
+IN PROCESS...
+
+*******************************************************************************************************************************************
+
+Daily 12/May/2025
+
+Se integra una solución en api_reports (feature/api-reports-fix y en el submódulo feature/regex-validator):
+
+Con la implementación usando los regex regex_validator y control_chars en las funciones que generan los reportes, si el usuario envía un carácter prohibido (por ejemplo, un carácter de control ASCII como el  o cualquier otro que Excel no acepte):
+
+¿Qué sucede?
+El carácter prohibido será eliminado automáticamente del dato antes de ser escrito en el archivo (ya sea CSV o Excel).
+El usuario no verá ese carácter en el reporte final. El resto del texto se mantendrá igual, solo sin el carácter prohibido.
+
+¿Por qué?
+El código aplica:
+regex_validator para limpiar caracteres especiales no deseados.
+control_chars para eliminar todos los caracteres de control ASCII prohibidos por Excel y que pueden causar problemas en CSV.
+Esto se hace antes de escribir cada celda en el archivo de salida.
+
+¿Qué NO sucede?
+No se lanza un error ni se detiene la generación del reporte.
+No se notifica al usuario que su dato fue modificado (a menos que SE QUIERA implementar una lógica adicional para avisar).
+
+Ejemplo:
+Si el usuario ingresa:
+"Hola\x1fMundo"
+El resultado en el archivo será:
+HolaMundo
+El carácter \x1f (ASCII 31) se elimina.
+
+Resumen
+- El carácter prohibido se elimina automáticamente.
+- No hay error ni aviso al usuario por defecto.
+- El reporte se genera correctamente, pero sin los caracteres prohibidos.
+
+**************************************************************************************************************************
+
+
+
+
 
 
 
