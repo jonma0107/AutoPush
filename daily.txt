@@ -167,6 +167,9 @@ Resumen
 - No hay error ni aviso al usuario por defecto.
 - El reporte se genera correctamente, pero sin los caracteres prohibidos.
 
+Nota:
+probar con Procesos
+
 **************************************************************************************************************************
 
 Prueba de CONCEPTO PARA TÉCNICA DE ENMASCARAMIENTO
