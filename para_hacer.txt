@@ -1,9 +1,9 @@
-1. probar implementacion de trackeum
-
+1. probar implementacion de trackeum (DONE)
+ 
 voy a desplegar en tal test, algo que no está en develop sino en la rama feature/RF
 necesitamos desplegar la funcionalidad de xxxx en tal test, algo que no está en develop sino en la rama feature/RF
 
-2. Pendiente Version 2 :
+2. Pendiente Version 2 : (DONE)
 
 guardar en paquetes distintos en el S3 de acuerdo a la categoría, osea cargar en el bucket pero que se guarde en diferente carpeta según la categoría
 
@@ -11,8 +11,8 @@ Nota: está pendiente por confirmar si se guarda en zip
 
 ****************************************************************************************************************************************************
 
-- Predicción de reingresos hospitalarios
+- Predicción de reingresos hospitalarios (LLM)
 
--Monitoreo remoto de pacientes., o RPM, es una herramienta común de atención médica que ayuda a los médicos a supervisar a pacientes con enfermedades crónicas o de corta duración que viven en áreas remotas. 
+-Monitoreo remoto de pacientes., o RPM, es una herramienta común de atención médica que ayuda a los médicos a supervisar a pacientes con enfermedades crónicas o de corta duración que viven en áreas remotas. (LLM) 
 
 ***************************************************************************************************************************************************
