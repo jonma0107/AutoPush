@@ -180,15 +180,36 @@ feature/masking
 
 *************************************************************************************************************************
 
+Daily 13 de Mayo
+
+- Django está intentando acceder a una variable de entorno llamada GUPSHUP_API_KEY, pero no está definida en el entorno en el que se está ejecutando (en este caso, en AWS Lambda a través de Zappa).
+
+- Dado que no usas requirements.txt, y trabajas solo con pyproject.toml y poetry.lock, Zappa no tomará en cuenta esas dependencias automáticamente. Por defecto, Zappa no tiene soporte nativo para Poetry.
 
 
 
+***********************************************************************************************************************************
+
+Daily 14 de Mayo
+
+ToDo:
+
+- cursor que se ejecuta y devuelve los datos
+
+- pasarle a la libreria el json
+
+- como estas devolviendo estos datos y mirar si ese json se puede pasar a la libreria
 
 
+Hallazgo en reportes de power-bi:
 
+- un tema de permisos desde pwbi
 
+Trackeum:
 
+- ajuste en la respuesta del serializador 
 
+**********************************************************************************************************************************
 
 
 
