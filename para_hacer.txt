@@ -19,3 +19,8 @@ porque está dependiendo de mailchimp
 api_report (submódulo) dependiendo de mailchimp y core
 OJO QUE TIENE UNA VARIABLE LLAMADA trackeum_service
 
+*****************************************************************************
+
+ASINCRONISMO EN MASSIVE LOAD PARA CARGUE DE ARCHIVOS CON REGISTROS MASIVOS
+
+
