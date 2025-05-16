@@ -211,5 +211,21 @@ Trackeum:
 
 **********************************************************************************************************************************
 
+Daily 16 de Mayo
+
+- Se creó una app para generar la encriptación y desencriptación de manera administrativa.
+- Evita la duplicación de encriptamiento
+No encriptes IDs, llaves foráneas, ni campos de relación.
+Solo encripta campos realmente sensibles y que no sean usados para búsquedas, relaciones o lógica de negocio.
+Nunca debes encriptar IDs, UUIDs, llaves foráneas o campos usados para relaciones.
+Si lo haces, romperás la integridad referencial y las relaciones entre tablas.
+
+
+- Ambiente multitenant de Colsubsidio (adultos) 
+tocó modificar un campo de un template y se solucionó compilando el template 
+para que genere una nueva tabla maestra. Eso debe hacerse con un Alter de SQL
+
+RECOMENDACIÓN
+usar la secret-key con fernet, usar una parte de la secret-key
 
 
