@@ -228,4 +228,12 @@ para que genere una nueva tabla maestra. Eso debe hacerse con un Alter de SQL
 RECOMENDACIÓN
 usar la secret-key con fernet, usar una parte de la secret-key
 
+****************************************************************************************************************
+
+Daily 19 de Mayo
+
+- Se trabajó en la nueva app de encriptación de datos , esta vez a nivel de presentación
+- Por trabajara en el submodulo de administracion de usuarios, se dejo un poco de lado el de recuperación de contraseña
+  SE TRABAJARÁ CON SANTI
+
 
