@@ -235,5 +235,11 @@ Daily 19 de Mayo
 - Se trabajó en la nueva app de encriptación de datos , esta vez a nivel de presentación
 - Por trabajara en el submodulo de administracion de usuarios, se dejo un poco de lado el de recuperación de contraseña
   SE TRABAJARÁ CON SANTI
+*********************************************************************************************************************
 
+Daily 20 Mayo
+
+- se dejó listo el PR de recuperación de contraseñas contestando unos comentarios y ajustando los test unitarios a que tengan la utilidades que usamos
+- se dejó listo la aplicación de encryptacion de datos, creando un mixin que se use en los serializadores que se necesite encriptar a la hora de presentar la info
+- estoy trabajando ajustando el pr de arreglar el filtro por estado de documentos cargados en massive load.
 
