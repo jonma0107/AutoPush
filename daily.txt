@@ -243,3 +243,18 @@ Daily 20 Mayo
 - se dejó listo la aplicación de encryptacion de datos, creando un mixin que se use en los serializadores que se necesite encriptar a la hora de presentar la info
 - estoy trabajando ajustando el pr de arreglar el filtro por estado de documentos cargados en massive load.
 
+*************************************************************************************************************
+
+Daily 21 Mayo
+
+- Se dejó listo el PR de descarga de archivo en massive load, se eliminó un FK que lo que hacía antes era crear una relación entre el CSV Y XLSX, 
+para obtener el archivo xlsx que se carga, esto hacía de saber el csv a qué archivo xlsx pertenece, se cambió ese enfoque creando esa relación 
+en la tarea que crea el objeto FileRequest para que en la respuesta json se tenga el archivo que se ha cargado.
+
+- Estoy terminando los test unitarios de ese PR, informarle a Johan y ya se podría mezclar.
+
+- Estoy trabajando en terminar ajustar el PR de filtro en massive load.
+
+*****************************************************************************************************************
+
+python manage.py test massive_load.tests.test_dump_bukeala_bookings_api_view
