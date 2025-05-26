@@ -258,3 +258,30 @@ en la tarea que crea el objeto FileRequest para que en la respuesta json se teng
 *****************************************************************************************************************
 
 python manage.py test massive_load.tests.test_dump_bukeala_bookings_api_view
+
+python manage.py test massive_load.tests.test_file_request_xlsx_association
+
+
+git commit -m "test: add unit tests for FileRequest and RequestXLSX association"
+
+
+PRUEBA EN TEST SIN AUTENTICACIÓN:
+
+
+TestDumpBukealaBookingsApiView
+
+self.client.post(path=self.url, data=data, HTTP_AUTHORIZATION=f"Bearer {self.authenticate()}")
+
+
+
+***************************************************************************************************************
+
+Daily 23 Mayo
+
+- AYER por elegir la mejor solución para que los PR , en el PR de descarga de archivo cargado, se fijo la creación de la relación
+
+******************************************************************************
+
+Daily 26 Mayo
+
+- El viernes se...
