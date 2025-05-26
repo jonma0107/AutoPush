@@ -42,29 +42,20 @@ Pasos para ejecutar los comandos en tu ambiente:
 
 El comando se ejecutará en el entorno Lambda de ese stage, con las variables de entorno y configuración de ese ambiente.
 
-******************************************************
-
-¿Qué hace esta línea de código?
-
-if (
-    isinstance(field, models.CharField)
-    and field.max_length is not None
-    and field.max_length < 128
-):
-    continue
-    
-Explicación:
-Evita encriptar campos CharField que tengan un max_length menor a 128.
-Es decir, si tienes un campo con max_length=20, este campo NO será encriptado ni desencriptado por los comandos.
-
-Esto se hace para evitar encriptar campos que probablemente sean IDs, códigos cortos, etc., donde la encriptación puede causar problemas de longitud o de lógica de negocio.
-
-¿Por qué?
-Un valor encriptado con Fernet es mucho más largo que el original.
-Si encriptaras un campo de 20 caracteres, el valor encriptado no cabría en el campo de la base de datos y causaría errores.
-
-
 ******************************************************************
+
+
+1.) encriptación 
+
+2.) filtro en archivos de soporte
+
+3.) integrar con front la recuperación de contraseñas
+
+4.) filtro estado archivo cargado en massive load
+
+-----------------------------------------------------------------
+
+
 
 
 
