@@ -287,3 +287,48 @@ Daily 29 Mayo
 - En la creación de nuevos validadores específicos 
 
 *****************************************************************************
+
+Daily 05 Jun
+
+- del modulo de encriptación de datos, he creado lo de   
+
+@middleware.py , @settings_base.py ,  @encryption.py , @app_config.py , @decrypt_responses.py , @encrypt_responses.py 
+1. Poder definir desde una tabla, las variables que desea encriptar. Para que no toque ir hasta el codigo @middleware.py  a configurar el diccionario o conjunto (SENSITIVE_FIELDS).
+
+2. Quieren que no haya necesidad de ejecutar el comando del manage para encriptar @encryption.py y @decrypt_responses.py  . Sino que sea un permiso de usuario que podríamos manejar desde el modelo@user.py . Si x usuario tiene ese permiso, al ingresar, de una todo se le encripta. Pero si el usuario no tiene el permiso, todo se mostraría normal.
+
+************************************************************************************************************
+
+Daily 09 Jun
+
+HALLAZGO:
+
+¿Qué debe hacer el frontend?
+Limpiar o actualizar el localStorage cuando detecte que el usuario ha perdido el permiso o ha cerrado sesión.
+Siempre que el usuario cambie de permisos, el frontend debe volver a pedir los datos al backend y actualizar el localStorage con la versión correcta (desencriptada).
+Nunca guardar información sensible en localStorage (esto es una mala práctica de seguridad).
+
+¿Cómo puedes ayudar al frontend?
+Notifica al equipo frontend que:
+Cuando el usuario pierde el permiso, debe limpiar el localStorage o volver a pedir los datos al backend.
+Si el usuario cierra sesión, debe limpiar el localStorage.
+Si el usuario cambia de rol/permisos, debe refrescar los datos desde el backend.
+
+*********************************************************************************************************
+
+¿Por qué estos tests fallan con tu middleware?
+Porque el middleware de encriptación/desencriptación:
+Consulta la base de datos para permisos del usuario.
+Consulta la base de datos para los campos sensibles.
+Esto suma queries adicionales a cada request, rompiendo el conteo esperado.
+
+SOLUCION:
+En producción y desarrollo: El middleware está activo y protege/encripta los datos.
+En tests: El middleware NO está activo, por lo que no suma queries ni afecta el entorno de pruebas.
+
+¿Qué pasa con los tests del propio middleware?
+Si quieres testear el middleware, puedes activarlo manualmente en esos tests usando override_settings o importando y llamando al middleware directamente en el test.
+Resumen para el equipo
+El middleware de encriptación solo se activa fuera de los tests.
+Los tests de queries y performance no se ven afectados.
+Los tests del middleware pueden ejecutarse de forma aislada.
