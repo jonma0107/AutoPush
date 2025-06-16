@@ -332,3 +332,16 @@ Resumen para el equipo
 El middleware de encriptación solo se activa fuera de los tests.
 Los tests de queries y performance no se ven afectados.
 Los tests del middleware pueden ejecutarse de forma aislada.
+
+*****************************************************************************************
+
+Daily 16/06/2025
+
+
+- Usar otro esquema de cifrado más compacto
+
+- identificar error de cargue masivo
+
+- test unitario del middleware del modulo de encriptación
+
+
